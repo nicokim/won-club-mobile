@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/auth_service.dart';
+import 'balance_screen.dart';
 import 'debts_screen.dart';
 import 'transactions_screen.dart';
 
@@ -15,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   static const List<Widget> _widgetOptions = <Widget>[
+    BalanceScreen(),
     DebtsScreen(),
     TransactionsScreen(),
   ];
@@ -82,6 +84,10 @@ class _HomeScreenState extends State<HomeScreen> {
         child: BottomNavigationBar(
           backgroundColor: Colors.grey[900],
           items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_balance_wallet),
+              label: 'Balance',
+            ),
             BottomNavigationBarItem(
               icon: Icon(Icons.money_off),
               label: 'Deudas',
